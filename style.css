@@ -1,0 +1,82 @@
+body {
+    height: 60vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Assistant';
+}
+form{
+    position: absolute;
+    right: 20px;
+    width: 30%;
+}
+.form {
+  width: 100%;
+  position: relative;
+  height: 50px;
+  overflow: hidden;
+}
+
+.form input{
+    width: 100%;
+    height: 100%;
+    color: #595f6e;
+    padding-top: 20px;
+    border: none;
+    outline: none;
+    text-align: right;
+ } 
+
+ 
+ .form label {
+   position: absolute;
+   bottom: 0px;
+   left: 0%;
+   height: 100%;
+   width: 100%;
+   pointer-events: none;
+   border-bottom: 1px solid black;
+  }
+
+  .form label::after {
+     content: "";
+     position: absolute;
+     right: 0px;
+     bottom: -1px;
+     height: 100%;
+     width: 100%;
+     border-bottom: 3px solid tomato;
+     transform: translateX(100%);
+     transition:  all 0.3s ease;
+  }
+
+  .content-name {
+    position: absolute;
+    bottom: 5px;
+    right: 0px;
+    transition: all 0.3s ease;
+  }
+
+  .star {
+    transition: all 0.3s ease;
+  }
+
+  .form input:focus + .label-name .content-name,
+  .form-input:valid + .label-name .content-name {
+    transform: translateY(-150%);
+    font-size: 14px;
+  }
+  .form input:focus + .label-name .star,
+  .form-input:valid + .label-name .star {
+    transform: translateY(-150%);
+    font-size: 14px;
+    color: tomato;
+  }
+
+.form input:not(:placeholder-shown) + .label-name .content-name {
+      transform: translateY(-150%);
+    font-size: 14px;
+}
+
+
